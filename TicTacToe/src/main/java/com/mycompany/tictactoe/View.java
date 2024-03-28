@@ -14,6 +14,8 @@ public class View extends javax.swing.JFrame {
 
     boolean whoseTurn;
     boolean gameOver;
+    // testing variable
+    String test;
     /**
      * Creates new form View
      */
@@ -42,16 +44,16 @@ public class View extends javax.swing.JFrame {
 
   // Check the rows and columns for a tic tac toe
   for (int i=0; i<3; i++) {
-    if (status[i][0].equals(status[i][1]) && status[i][1].equals(status[i][2]))
+    if (status[i][0].equals(status[i][1]) && status[i][0].equals(status[i][2]) && !status[i][0].equals(""))
       return status[i][0];
-    if (status[0][i].equals(status[1][i]) &&  status[1][i].equals(status[2][i]))
-      return status[1][0];
+    if (status[0][i].equals(status[1][i]) &&  status[0][i].equals(status[2][i]) && !status[0][i].equals(""))
+      return status[0][i];
   }
 
   // Check the diagonals
-  if (status[0][0].equals(status[1][1]) && status[0][0].equals(status[2][2]))
+  if (status[0][0].equals(status[1][1]) && status[0][0].equals(status[2][2]) && !status[0][0].equals(""))
     return status[0][0];
-  if (status[0][2].equals(status[1][1]) && status[0][2].equals(status[2][0]))
+  if (status[0][2].equals(status[1][1]) && status[0][2].equals(status[2][0]) && !status[0][2].equals(""))
     return status[0][2];
 
   // If we haven't found it, then return a blank string
